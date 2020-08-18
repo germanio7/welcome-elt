@@ -88,7 +88,7 @@
               </div>
             </div>
             <p class="text-center text-gray-500 text-xs">
-              &copy;2020 Test Jitsi
+              &copy;2020 Heaven SchoolMate
             </p>
           </div>
         </div>
