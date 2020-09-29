@@ -1,105 +1,66 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Welcome English Language Teaching</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <link rel="icon" type="image/jpeg" href="{{asset('./welcome.jpeg')}}" />
 
-            .full-height {
-                height: 100vh;
-            }
+    <link href="{{mix('/css/main.css')}}" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <script src='https://meet.jit.si/external_api.js' defer></script>
+</head>
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-        <script src='https://meet.jit.si/external_api.js'></script>
-    </head>
-    <body>
-        <div class="container m-auto p-auto flex justify-center m-4 p-4">
+<body>
+    <nav class="flex items-center justify-between flex-wrap bg-gradient-to-r from-red-500 via-white to-blue-500 p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+            <img src="./welcome.jpeg" class="rounded-full fill-current h-8 w-8 mr-2" width="54" height="54" alt="img">
+            <span class="font-semibold text-xl tracking-tight">Welcome ELT</span>
+        </div>
+    </nav>
+    <div class="container m-auto p-auto flex justify-center m-4 p-4">
         <div class="w-full max-w-xs">
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                  Room Name
-                </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sala" type="text" placeholder="Room Name">
-              </div>
-              <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                  Password
-                </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="contraseña" type="password" placeholder="******">
-              </div>
-              <div class="flex items-center justify-center">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="iniciar()">
-                  Start
-                </button>
-              </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Room Name
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="sala" type="text" placeholder="Room Name">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        id="contraseña" type="password" value="Welcome2020">
+                </div>
+                <div class="flex items-center justify-center">
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button" onclick="iniciar()">
+                        Start
+                    </button>
+                </div>
             </div>
             <p class="text-center text-gray-500 text-xs">
-              &copy;2020 Heaven SchoolMate
+                &copy;2020 Welcome English Language Teaching
             </p>
-          </div>
         </div>
+    </div>
 
-        <div class="container m-auto p-auto flex justify-center m-4 p-4">
-            <div id="jitsi-container"></div>
-        </div>
-    </body>
+    <div class="container m-auto p-auto flex justify-center m-4 p-4">
+        <div id="jitsi-container"></div>
+    </div>
+</body>
 
-    <script>
-        function iniciar(){
+<script>
+    function iniciar(){
             var container = document.getElementById('jitsi-container');
             var domain = "meet.jit.si";
             var sala = document.getElementById('sala');
@@ -134,5 +95,6 @@
             });
         }
     
-    </script>
+</script>
+
 </html>
