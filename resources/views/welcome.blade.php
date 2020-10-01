@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="flex items-center justify-between flex-wrap bg-gradient-to-r from-red-500 via-white to-blue-500 p-6">
+    <nav class="flex items-center justify-between flex-wrap bg-gradient-to-r from-red-500 to-blue-500 p-6">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
             <img src="./welcome.jpeg" class="rounded-full fill-current h-8 w-8 mr-2" width="54" height="54" alt="img">
             <span class="font-semibold text-xl tracking-tight">Welcome ELT</span>
@@ -32,13 +32,21 @@
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="sala" type="text" placeholder="Room Name">
                 </div>
-                <div class="mb-6">
+                <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                         Password
                     </label>
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                        id="contraseña" type="password" value="Welcome2020">
+                        id="contraseña" type="password" placeholder="Password">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        User Name
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="name" type="text" placeholder="User Name">
                 </div>
                 <div class="flex items-center justify-center">
                     <button
@@ -64,15 +72,17 @@
             var container = document.getElementById('jitsi-container');
             var domain = "meet.jit.si";
             var sala = document.getElementById('sala');
+            var name = document.getElementById('name');
             var contraseña = document.getElementById('contraseña');
+            var jitsi = document.getElementById('jitsi-container');
+            jitsi.scrollIntoView();
             var options = {
                 "roomName": sala.value,
                 "parentNode": container,
                 "width": 800,
                 "height": 600,
                 userInfo: {
-                    email: 'german@mail.com',
-                    displayName: 'german'
+                    displayName: name.value
                 },
                 devices: {
                     audioInput: '<deviceLabel>',
@@ -92,6 +102,8 @@
                 api.dispose();
                 sala.value='';
                 contraseña.value='';
+                name.value='';
+                jitsi.classList.add('hidden');
             });
         }
     
