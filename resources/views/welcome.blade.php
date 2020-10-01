@@ -75,12 +75,18 @@
             var name = document.getElementById('name');
             var contraseña = document.getElementById('contraseña');
             var jitsi = document.getElementById('jitsi-container');
+            var ancho = 800;
+            var alto = 600;
+            if (screen.width <= 640) {
+                ancho = 300;
+                alto = 400;
+            }
             jitsi.scrollIntoView();
             var options = {
                 "roomName": sala.value,
                 "parentNode": container,
-                "width": 800,
-                "height": 600,
+                "width": ancho,
+                "height": alto,
                 userInfo: {
                     displayName: name.value
                 },
@@ -103,7 +109,6 @@
                 sala.value='';
                 contraseña.value='';
                 name.value='';
-                jitsi.classList.add('hidden');
             });
         }
     
