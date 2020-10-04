@@ -11,7 +11,8 @@
 
     <link href="{{mix('/css/main.css')}}" rel="stylesheet">
 
-    <script src='https://meet.jit.si/external_api.js' defer></script>
+    {{-- <script src='https://meet.jit.si/external_api.js' defer></script> --}}
+    <script src='https://welcome-elt.herokuapp.com/external_api.js' defer></script>
 </head>
 
 <body>
